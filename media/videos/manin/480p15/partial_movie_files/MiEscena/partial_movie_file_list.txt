@@ -1,0 +1,7 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/yotai/Documents/Algebra/media/videos/manin/480p15/partial_movie_files/MiEscena/1185818338_3863393001_223132457.mp4'
+file 'file:C:/Users/yotai/Documents/Algebra/media/videos/manin/480p15/partial_movie_files/MiEscena/624642324_1613183118_3724125193.mp4'
+file 'file:C:/Users/yotai/Documents/Algebra/media/videos/manin/480p15/partial_movie_files/MiEscena/624642324_3508869363_2053229576.mp4'
+file 'file:C:/Users/yotai/Documents/Algebra/media/videos/manin/480p15/partial_movie_files/MiEscena/624642324_784179552_706908792.mp4'
+file 'file:C:/Users/yotai/Documents/Algebra/media/videos/manin/480p15/partial_movie_files/MiEscena/624642324_3968313053_1840779778.mp4'
+file 'file:C:/Users/yotai/Documents/Algebra/media/videos/manin/480p15/partial_movie_files/MiEscena/624642324_556399307_274771787.mp4'

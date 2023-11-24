@@ -1,0 +1,11 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/yotai/Documents/Algebra/media/videos/manin/480p15/partial_movie_files/IntroPi/1185818338_1006083430_223132457.mp4'
+file 'file:C:/Users/yotai/Documents/Algebra/media/videos/manin/480p15/partial_movie_files/IntroPi/624642324_2919340033_1877806484.mp4'
+file 'file:C:/Users/yotai/Documents/Algebra/media/videos/manin/480p15/partial_movie_files/IntroPi/624642324_610498663_2948916905.mp4'
+file 'file:C:/Users/yotai/Documents/Algebra/media/videos/manin/480p15/partial_movie_files/IntroPi/624642324_2919340033_4090906741.mp4'
+file 'file:C:/Users/yotai/Documents/Algebra/media/videos/manin/480p15/partial_movie_files/IntroPi/624642324_3021983761_3970145400.mp4'
+file 'file:C:/Users/yotai/Documents/Algebra/media/videos/manin/480p15/partial_movie_files/IntroPi/624642324_784179552_4226259271.mp4'
+file 'file:C:/Users/yotai/Documents/Algebra/media/videos/manin/480p15/partial_movie_files/IntroPi/624642324_3656293411_3370068400.mp4'
+file 'file:C:/Users/yotai/Documents/Algebra/media/videos/manin/480p15/partial_movie_files/IntroPi/624642324_2919340033_1910786843.mp4'
+file 'file:C:/Users/yotai/Documents/Algebra/media/videos/manin/480p15/partial_movie_files/IntroPi/624642324_4008624801_771069580.mp4'
+file 'file:C:/Users/yotai/Documents/Algebra/media/videos/manin/480p15/partial_movie_files/IntroPi/624642324_2919340033_234892375.mp4'

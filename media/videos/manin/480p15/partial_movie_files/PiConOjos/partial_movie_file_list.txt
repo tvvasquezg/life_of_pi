@@ -1,0 +1,6 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/yotai/Documents/Algebra/media/videos/manin/480p15/partial_movie_files/PiConOjos/1185818338_77294438_2571498876.mp4'
+file 'file:C:/Users/yotai/Documents/Algebra/media/videos/manin/480p15/partial_movie_files/PiConOjos/624642324_65418171_2571498876.mp4'
+file 'file:C:/Users/yotai/Documents/Algebra/media/videos/manin/480p15/partial_movie_files/PiConOjos/624642324_3444087947_2571498876.mp4'
+file 'file:C:/Users/yotai/Documents/Algebra/media/videos/manin/480p15/partial_movie_files/PiConOjos/624642324_2365233723_2571498876.mp4'
+file 'file:C:/Users/yotai/Documents/Algebra/media/videos/manin/480p15/partial_movie_files/PiConOjos/624642324_784179552_1104251978.mp4'
