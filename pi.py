@@ -1,4 +1,7 @@
+# -*- coding: utf-8 -*-
+
 from manim import *
+#from moviepy.editor import VideoFileClip, clips_array
 
 
 class PiTimeline(Scene):
@@ -140,9 +143,9 @@ class PiEvolution(Scene):
             length=10,
             color=BLUE,
             include_numbers=True,
-            label_direction=UP,
+            label_direction=DOWN,
             font_size=20
-        )
+        ).to_edge(DOWN)
         self.play(Create(timeline))
         self.wait(1)
 
@@ -157,23 +160,7 @@ class PiEvolution(Scene):
 
         # Crear y animar cada evento
 
-        circle = Circle(radius=2, color=WHITE)
-        self.play(Create(circle))
-
-        num_iterations = 6
-
-        for sides in range(4, num_iterations + 4):
-            inscribed_polygon, inscribed_label = self.get_polygon_inscribed_in_circle(circle, sides)
-            circumscribed_polygon, circumscribed_label = self.get_polygon_circumscribed_about_circle(circle, sides)
-
-            self.play(Create(inscribed_polygon), Write(inscribed_label))
-            self.wait(0.5)
-            self.play(FadeOut(inscribed_polygon), FadeOut(inscribed_label))
-            self.play(Create(circumscribed_polygon), Write(circumscribed_label))
-            self.wait(0.5)
-            self.play(FadeOut(circumscribed_polygon), FadeOut(circumscribed_label))
-
-        self.wait(1)
+       
 
         for i,event in enumerate(events):
                 dot = Dot(color=RED).move_to(timeline.n2p(event["year"]))
@@ -181,11 +168,100 @@ class PiEvolution(Scene):
                 value = Text(event["value"], font_size=15).next_to(dot, DOWN*(i+2))
                 self.play(FadeIn(dot), Write(text), Write(value),)
                 self.wait(1)
+                if i ==0:
+                    babi = ImageMobject("C:\\Users\\yotai\\Documents\\Algebra\\life_of_pi\\media\\images\\pi\\babilonios.jpeg")
+                    self.play(FadeIn(babi), run_time=2)
+                elif i==1:
+                    circle = Circle(radius=2, color=WHITE)
+                    self.play(Create(circle),FadeOut(babi))
+
+                    num_iterations = 6
+
+                    for sides in range(4, num_iterations + 4):
+                        inscribed_polygon, inscribed_label = self.get_polygon_inscribed_in_circle(circle, sides)
+                        circumscribed_polygon, circumscribed_label = self.get_polygon_circumscribed_about_circle(circle, sides)
+
+                        self.play(Create(inscribed_polygon), Write(inscribed_label), run_time=0.25)
+                        self.play(FadeOut(inscribed_polygon), FadeOut(inscribed_label), run_time=0.25)
+                        self.play(Create(circumscribed_polygon), Write(circumscribed_label), run_time=0.25)
+                        self.play(FadeOut(circumscribed_polygon), FadeOut(circumscribed_label), run_time=0.25)
+
+                    self.wait(1)
+                elif i == 2:
+                    chino = ImageMobject("C:\\Users\\yotai\\Documents\\Algebra\\life_of_pi\\media\\images\\pi\\china.jpg")
+                    tsu = ImageMobject("C:\\Users\\yotai\\Documents\\Algebra\\life_of_pi\\media\\images\\pi\\tsu.jpg").next_to(chino)
+                    self.play(FadeIn(chino),FadeIn(tsu),FadeOut(circumscribed_polygon),FadeOut(circle),run_time=2)
+                elif i == 3:
+                    alga = ImageMobject("C:\\Users\\yotai\\Documents\\Algebra\\life_of_pi\\media\\images\\pi\\alga.jpeg").next_to(chino)
+                    self.play(FadeOut(tsu),FadeIn(alga),run_time=2)
+                elif i == 4:
+                    pip = ImageMobject("C:\\Users\\yotai\\Documents\\Algebra\\life_of_pi\\media\\images\\pi\\pi.png")
+                    self.play(FadeOut(alga),FadeIn(pip),run_time=2)
 
         self.play(FadeOut(timeline), *[FadeOut(mob) for mob in self.mobjects])
+        self.wait(1)
 
+        # Título de la sección "Cultura Popular"
+        title1 = MathTex("\\pi \\text{en la Cultura Popular}")
+        self.play(Write(title1))
+        # Narración: Introducción a la sección
+        intro_narrationCP = MathTex(" \\pi \\text{ha capturado la imaginación en la cultura popular, apareciendo en películas, literatura y arte.}").next_to(title1, DOWN, buff=0.5)
+        self.play(Write(intro_narrationCP))
 
+        # Imágenes representativas de la cultura popular
+        book = ImageMobject("C:\\Users\\yotai\\Documents\\Algebra\\life_of_pi\\media\\images\\pi\\book.png").scale(0.5)
+        culture = ImageMobject("C:\\Users\\yotai\\Documents\\Algebra\\life_of_pi\\media\\images\\pi\\2.png").scale(0.5).next_to(book,RIGHT)
+        #image_group = Group(book, culture).arrange(RIGHT, buff=0.5).next_to(intro_narrationCP, DOWN, buff=0.5)
 
+        # Transición a la siguiente sección
+        #self.play(FadeOut(title1), FadeOut(intro_narrationCP))
+        self.play(FadeIn(book), FadeIn(culture),run_time=2)
+        self.play(FadeOut(book),FadeOut(culture))
+        self.wait(2)
+        
+
+        # Título de la sección "Propiedades Matemáticas"
+        title2 = MathTex("\\text{Propiedades Matemáticas de} \\pi").next_to(culture, DOWN, buff=0.5)
+        self.play(Write(title2))
+        self.wait(1)
+
+        # Narración: Introducción a la irracionalidad y trascendencia
+        properties_narration = MathTex("\\pi \\text{es un número irracional y trascendental, no expresable como fracción exacta y no solución de ecuaciones algebraicas no triviales.}").next_to(title2, DOWN, buff=0.5)
+        self.play(Write(properties_narration))
+        self.wait(2)
+
+        # Título de la subsección "Irracionalidad de π"
+        sub_title = MathTex("\\{text Irracionalidad de} \\pi").next_to(properties_narration, DOWN, buff=0.5)
+        self.play(Write(sub_title))
+        self.wait(1)
+
+        # Animación de los decimales de π extendiéndose
+        pi_decimals = DecimalNumber(
+            3.14159,  # Valor inicial de π
+            num_decimal_places=20,  # Número de decimales para mostrar
+            include_sign=False,  # Sin signo
+            font_size=36,
+            unit=None,
+            group_with_commas=False
+        ).next_to(sub_title, DOWN, buff=0.5)
+        self.play(Write(pi_decimals))
+        self.wait(1)
+
+        # Cambiar los decimales de π gradualmente para simular una secuencia infinita
+        for _ in range(5):  # Repetir varias veces para efecto
+            new_decimal = DecimalNumber(
+                3.14159,  # Puedes usar un valor más preciso de π aquí
+                num_decimal_places=20,
+                include_sign=False,
+                font_size=36,
+                unit=None,
+                group_with_commas=False
+            ).next_to(sub_title, DOWN, buff=0.5)
+            self.play(Transform(pi_decimals, new_decimal), run_time=2)
+            self.wait(1)
+
+        # Transición a la siguiente sección
+        self.play(FadeOut(title2), FadeOut(properties_narration), FadeOut(sub_title), FadeOut(pi_decimals))
 
 
         # Añadir a la escena

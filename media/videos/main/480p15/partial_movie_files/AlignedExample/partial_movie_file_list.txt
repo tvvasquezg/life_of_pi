@@ -1,0 +1,3 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/yotai/Documents/Algebra/life_of_pi/media/videos/main/480p15/partial_movie_files/AlignedExample/1185818338_725311701_223132457.mp4'
+file 'file:C:/Users/yotai/Documents/Algebra/life_of_pi/media/videos/main/480p15/partial_movie_files/AlignedExample/624642324_784179552_816470278.mp4'
